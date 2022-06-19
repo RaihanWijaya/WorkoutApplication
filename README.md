@@ -36,3 +36,10 @@ Untuk menjalankan projek ini, bisa dengan menggunakan command berikut:
 
 - [@RaihanWijaya](https://www.github.com/RaihanWijaya)
 
+## ERD
+
+  [![ERD](https://github.com/RaihanWijaya/WorkoutApplication/blob/main/add-on/ERD.png)](https://github.com/RaihanWijaya/WorkoutApplication/blob/main/add-on/ERD.png)
+
+## Flowchart
+
+  [![Flowchart](https://github.com/RaihanWijaya/WorkoutApplication/blob/main/add-on/Flowchart.png)](https://github.com/RaihanWijaya/WorkoutApplication/blob/main/add-on/Flowchart.png)

@@ -29,6 +29,7 @@ Untuk menjalankan projek ini, bisa dengan menggunakan command berikut:
 ```
 
 ## Postman
+Untuk API yang digunakan, bisa menggunakan button dibawah ini:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/18438487/UzBmMn5P)
 

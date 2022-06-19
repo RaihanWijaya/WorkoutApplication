@@ -33,6 +33,7 @@ public class AddWorkoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         mContext = this;
         userService = ApiUtils.getUserService();

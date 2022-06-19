@@ -36,7 +36,7 @@
 
         <EditText
             android:id="@+id/loginUsername"
-            android:layout_width="0dp"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"            android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -44,11 +44,10 @@
             android:layout_marginLeft="22dp"
             android:layout_marginTop="211dp"
             android:layout_marginRight="22dp"
-            android:fontFamily="@font/urbanist"
             android:autofillHints="Username"
             android:background="@drawable/rectangle_4"
+            android:fontFamily="@font/urbanist"
             android:hint="Username"
-            android:inputType="text"
             android:paddingStart="15dp"
             android:paddingEnd="10dp" />
 
@@ -62,9 +61,9 @@
             android:layout_marginLeft="22dp"
             android:layout_marginTop="282dp"
             android:layout_marginRight="22dp"
-            android:fontFamily="@font/urbanist"
             android:autofillHints="Password"
             android:background="@drawable/rectangle_4"
+            android:fontFamily="@font/urbanist"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingStart="15dp"

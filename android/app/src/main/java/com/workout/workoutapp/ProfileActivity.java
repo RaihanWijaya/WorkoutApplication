@@ -1,5 +1,6 @@
 package com.workout.workoutapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -47,6 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         mContext = this;
         userService = ApiUtils.getUserService();
@@ -151,7 +153,7 @@ public class ProfileActivity extends AppCompatActivity {
         Gson gson = new Gson();
         userService.getWorkoutRequest().enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(mContext, "Sukses", Toast.LENGTH_SHORT).show();
                     try {
@@ -175,7 +177,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
                 Log.e("debug", "onFailure: ERROR > " + t.toString());
             }
         });
@@ -184,7 +186,7 @@ public class ProfileActivity extends AppCompatActivity {
     void deleteUser(){
         userService.deleteUserRequest().enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(mContext, "Sukses", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(mContext, StartActivity.class);
@@ -195,7 +197,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
                 Log.e("debug", "onFailure: ERROR > " + t.toString());
             }
         });

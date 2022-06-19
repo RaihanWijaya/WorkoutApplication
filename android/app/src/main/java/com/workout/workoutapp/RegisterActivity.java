@@ -3,6 +3,8 @@ package com.workout.workoutapp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -57,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                } else if (password.contains(" ") || confirmPassword.contains(" ")) {
+                    Toast.makeText(RegisterActivity.this, "Password cannot contain spaces", Toast.LENGTH_SHORT).show();
                 } else if (!password.equals(confirmPassword)) {
                     Toast.makeText(RegisterActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                 } else {

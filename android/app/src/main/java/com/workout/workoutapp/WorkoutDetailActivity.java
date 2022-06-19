@@ -30,6 +30,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
         mContext = this;
         userService = ApiUtils.getUserService();
@@ -98,7 +99,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(mContext, "Workout deleted successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(mContext, MainActivity.class);
+                    Intent intent = new Intent(mContext, ProfileActivity.class);
                     startActivity(intent);
                 }
                 else{

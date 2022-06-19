@@ -13,7 +13,7 @@ router.delete('/deleteUser', workoutController.deleteUser);
 router.route('/tracking')
     .post(workoutController.createTracking)
     .get(workoutController.getTracking)
-    .delete(workoutController.deleteTracking);
+router.post('/deleteTracking',workoutController.deleteTracking);
 
 //Table workout, createWorkout - deleteWorkout
 router.route('/workout')

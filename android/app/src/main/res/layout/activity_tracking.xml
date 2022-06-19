@@ -6,4 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".TrackingActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/trackingBack"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/back" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/urbanist"
+                android:text="Self Tracking"
+                android:textAlignment="center"
+                android:textAppearance="@style/hello_regis"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/ic_baseline_book_24"
+            android:background="@color/teal_200"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/urbanist"
+            android:text="List of Tracking"
+            android:textAlignment="center"
+            android:textAppearance="@style/menu"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/lvTracking"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:fontFamily="@font/urbanist" />
+
+        <Button
+            android:id="@+id/trackingAdd"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:text="Create a new tracking"
+            android:textAppearance="@style/menu"
+            android:fontFamily="@font/urbanist"
+            android:background="@drawable/rectangle_1" />
+
+        <Button
+            android:id="@+id/trackingGraph"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:text="Show my graph!"
+            android:textAppearance="@style/menu"
+            android:fontFamily="@font/urbanist"
+            android:background="@drawable/rectangle_1" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

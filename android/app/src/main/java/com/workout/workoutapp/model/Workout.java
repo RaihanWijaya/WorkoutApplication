@@ -34,46 +34,6 @@ public class Workout {
         this.workoutid = workoutid;
     }
 
-    public int getWorkoutid() {
-        return workoutid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getBodypart() {
-        return bodypart;
-    }
-
-    public int getReps() {
-        return reps;
-    }
-
-    public int getSets() {
-        return sets;
-    }
-
-    public int getUserid() {
-        return userid;
-    }
-
-    @NonNull
-    @Override
-    public String toString() {
-        return name+"\n"+bodypart;
-    }
-
-    public JSONObject getJSONObject() throws JSONException {
-        return new JSONObject()
-                .put("workoutid", workoutid)
-                .put("name", name)
-                .put("bodypart", bodypart)
-                .put("reps", reps)
-                .put("sets", sets)
-                .put("userid", userid);
-    }
-
     public String getWorkoutID() {
         return String.valueOf(workoutid);
     }
@@ -92,5 +52,25 @@ public class Workout {
 
     public String getWorkoutSets() {
         return String.valueOf(sets);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return name+"\n"+bodypart;
+    }
+
+    public JSONObject getJSONObject() throws JSONException {
+        return new JSONObject()
+                .put("workoutid", workoutid)
+                .put("name", name)
+                .put("bodypart", bodypart)
+                .put("reps", reps)
+                .put("sets", sets)
+                .put("userid", userid);
     }
 }

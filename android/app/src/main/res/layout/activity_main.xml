@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="22dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="22dp"
             android:gravity="top"
             android:lineSpacingExtra="3sp"
@@ -83,11 +83,23 @@
         <ListView
             android:id="@+id/lvDailyWorkout"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="170dp"
             android:layout_marginEnd="22dp"
             android:layout_marginStart="22dp"
             android:fontFamily="@font/urbanist"
             />
+
+        <Button
+            android:id="@+id/mainFinish"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:text="I did my workout!"
+            android:textAppearance="@style/menu"
+            android:fontFamily="@font/urbanist"
+            android:background="@drawable/rectangle_1" />
 
         <Button
             android:id="@+id/mainTracking"

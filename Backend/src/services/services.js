@@ -43,19 +43,23 @@ async function deleteUser (user){
     else{
         const query = `DELETE FROM users WHERE userid = '${user.userid}'`;
         const result = await db.query(query);
+        const queryTracking = `DELETE FROM tracking WHERE userid = '${user.userid}'`;
+        const resultTracking = await db.query(queryTracking);
+        const queryWorkout = `DELETE FROM workout WHERE userid = '${user.userid}'`;
+        const resultWorkout = await db.query(queryWorkout);
         return {workout: result.rows};
     }
 }
 
 //Tracking, createTracking - getTracking - deleteTracking
 async function createTracking (workout, user){
-    const {weight, height} = workout;
+    const {weight, height, progress} = workout;
     if (user === null){
         return {message: 'User not logged in'};
     }
     else{
         const bmi = (height * height) / weight;
-        const query = `INSERT INTO tracking (weight, height, bmi, userid) VALUES ('${weight}', '${height}', '${bmi}', '${user.userid}')`;
+        const query = `INSERT INTO tracking (weight, height, bmi, userid, progress) VALUES ('${weight}', '${height}', '${bmi}', '${user.userid}', '${progress}')`;
         const result = await db.query(query);
         return {message: 'Tracking added'};
     }

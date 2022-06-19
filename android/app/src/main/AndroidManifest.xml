@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Workout"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".TrackingGraphActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TrackingAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TrackingDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".WorkoutEditActivity"
             android:exported="false" />
         <activity

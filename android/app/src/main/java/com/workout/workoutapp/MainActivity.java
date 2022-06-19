@@ -33,7 +33,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mainBack, mainProfile, mainTracking;
+    Button mainBack, mainProfile, mainTracking, mainFinish;
     ListView lvDailyWorkout;
     Context mContext;
     UserService userService;
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         mainBack = (Button) findViewById(R.id.mainBack);
         mainProfile = (Button) findViewById(R.id.mainProfile);
         mainTracking = (Button) findViewById(R.id.mainTracking);
+        mainFinish = (Button) findViewById(R.id.mainFinish);
 
         getListWorkout();
 
@@ -75,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, TrackingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mainFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, TrackingAddActivity.class);
                 startActivity(intent);
             }
         });

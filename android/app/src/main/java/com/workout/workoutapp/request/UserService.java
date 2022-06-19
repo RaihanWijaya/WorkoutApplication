@@ -44,6 +44,18 @@ public interface UserService {
                                             @Field("reps") String reps,
                                             @Field("sets") String sets);
 
+    //Tracking
+    @GET("tracking")
+    Call<ResponseBody> getTrackingRequest();
+    @FormUrlEncoded
+    @POST("deleteTracking")
+    Call<ResponseBody> deleteTrackingRequest(@Field("trackingid") int trackingid);
+    @FormUrlEncoded
+    @POST("tracking")
+    Call<ResponseBody> addTrackingRequest(@Field("weight") String weight,
+                                          @Field("height") String height,
+                                          @Field("progress") String progress);
+
     //Misc
     @GET("getUser")
     Call<ResponseBody> getUserRequest();

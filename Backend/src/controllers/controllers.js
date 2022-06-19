@@ -28,6 +28,15 @@ async function getUser(req,res){
     }
 }
 
+async function deleteUser(req,res){
+    try{
+        const result = await workoutService.deleteUser(req.user);
+        res.json(result);
+    }catch(err){
+        res.json(err.detail);
+    }
+}
+
 async function createTracking(req,res){
     try{
         const result = await workoutService.createTracking(req.body, req.user);
@@ -95,6 +104,7 @@ module.exports = {
     login,
     register,
     getUser,
+    deleteUser,
     createTracking,
     getTracking,
     deleteTracking,

@@ -28,7 +28,8 @@ passport.use(new LocalStrategy(
                 done(null, false);
             }else{
                 const user = result.rows[0];
-                if(helper.comparePassword(password, user.password)){
+                const comparePass = await helper.comparePassword(password, user.password);
+                if(comparePass){
                     done(null, user);
                 }else{
                     done(null, false);

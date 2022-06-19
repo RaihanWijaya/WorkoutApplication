@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/mainBack"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="22dp"
+                android:text="@string/back" />
+
+            <Button
+                android:id="@+id/mainProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="22dp"
+                android:layout_alignParentEnd="true"
+                android:text="My Profile" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="fill_parent"
+                android:layout_height="300dp"
+                android:contentDescription="HomeWorkout"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_workout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/welcome_message"
+            android:layout_width="wrap_content"
+            android:layout_height="78dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="22dp"
+            android:fontFamily="@font/urbanist"
+            android:lineSpacingExtra="3sp"
+            android:text="Welcome to Workout Application!"
+            android:textAlignment="center"
+            android:textAppearance="@style/hello_regis"
+            android:textStyle="bold"
+            android:translationY="-1.5sp" />
+
+        <TextView
+            android:id="@+id/do_workout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="22dp"
+            android:gravity="top"
+            android:lineSpacingExtra="3sp"
+            android:fontFamily="@font/urbanist"
+            android:text="Do your daily workout!"
+            android:textAppearance="@style/menu"
+            android:textStyle="normal"
+            android:translationY="-1.5sp" />
+
+        <ListView
+            android:id="@+id/lvDailyWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:fontFamily="@font/urbanist"
+            />
+
+        <Button
+            android:id="@+id/mainTracking"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:text="Track your workout"
+            android:textAppearance="@style/menu"
+            android:fontFamily="@font/urbanist"
+            android:background="@drawable/rectangle_1" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ async function login (workout){
     }
     const user = result.rows[0];
     if(helper.comparePassword(password, user.password)){
-        return user;
+        return {user, message: 'User logged in'};
     }
     return {message: 'Wrong password'};
 }
@@ -31,6 +31,17 @@ async function getUser (user){
     }
     else{
         const query = `SELECT * FROM users WHERE userid = '${user.userid}'`;
+        const result = await db.query(query);
+        return {workout: result.rows};
+    }
+}
+
+async function deleteUser (user){
+    if (user === null){
+        return {message: 'User not logged in'};
+    }
+    else{
+        const query = `DELETE FROM users WHERE userid = '${user.userid}'`;
         const result = await db.query(query);
         return {workout: result.rows};
     }
@@ -115,7 +126,7 @@ async function deleteWorkout (workout, user){
         return {message: 'User not logged in'};
     }
     else{
-        const query = `DELETE FROM workout WHERE workoutid = '${workoutid}' AND userid = '${user.userid}'`;
+        const query = `DELETE FROM workout WHERE workoutid = '${workoutid}'`;
         const result = await db.query(query);
         return {message: 'Workout deleted'};
     }
@@ -125,6 +136,7 @@ module.exports = {
     login,
     register,
     getUser,
+    deleteUser,
     createTracking,
     getTracking,
     deleteTracking,

@@ -16,6 +16,11 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+/**
+ * Class: TrackingGraphActivity
+ * Description: This class is used to display the graph of the user's workout.
+ */
+
 public class TrackingGraphActivity extends AppCompatActivity {
 
     ArrayList<BarEntry> barArraylist;

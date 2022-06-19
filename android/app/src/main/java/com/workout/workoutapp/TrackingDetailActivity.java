@@ -1,6 +1,5 @@
 package com.workout.workoutapp;
 
-import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,14 +21,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: TrackingDeleteActivity
+ * Description: This class is used to show the details of a tracking from the database.
+ */
+
 public class TrackingDetailActivity extends AppCompatActivity {
 
     TextView trackingDetailID, trackingDetailDateTaken, trackingDetailWeight, trackingDetailHeight, trackingDetailBmi, trackingDetailProgress;
     Button trackingDetailBack, trackingDetailDelete;
     Context mContext;
     UserService userService;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

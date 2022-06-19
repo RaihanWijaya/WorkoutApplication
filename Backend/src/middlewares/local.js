@@ -1,3 +1,7 @@
+/**
+ * Local used for passport authentication
+ */
+
 const LocalStrategy = require('passport-local');
 const passport = require('passport');
 const db = require('../configs/db.config');

@@ -1,28 +1,37 @@
+/**
+ * Services is used to call the functions in the database.
+ */
+
 const db = require('../configs/db.config');
 const helper = require('../utils/helper');
 const workoutController = ('../controllers/controllers');
 
-//Users, login - register - getUser
+//Users, login - register - getUser - deleteUser
 async function login (workout){
     const {username, password} = workout;
-    const query = `SELECT * FROM users WHERE username = '${username}'`;
-    const result = await db.query(query);
-    if(result.rowCount === 0){
-        return {message: 'User not found'};
-    }
-    const user = result.rows[0];
-    if(helper.comparePassword(password, user.password)){
-        return {user, message: 'User logged in'};
+    if(username !== null || password !== null){
+        const query = `SELECT * FROM users WHERE username = '${username}'`;
+        const result = await db.query(query);
+        if(result.rowCount === 0){
+            return {message: 'User not found'};
+        }
+        const user = result.rows[0];
+        if(helper.comparePassword(password, user.password)){
+            return {user, message: 'User logged in'};
+        }
     }
     return {message: 'Wrong password'};
 }
 
 async function register (workout){
     const {username, password} = workout;
-    const hashedPassword = await helper.hashPassword(password);
-    const query = `INSERT INTO users (username, password) VALUES ('${username}', '${hashedPassword}')`;
-    const result = await db.query(query);
-    return {message: 'User created'};
+    if(username !== null || password !== null){
+        //Insert with hashed password
+        const hashedPassword = await helper.hashPassword(password);
+        const query = `INSERT INTO users (username, password) VALUES ('${username}', '${hashedPassword}')`;
+        const result = await db.query(query);
+        return {message: 'User created'};
+    }
 }
 
 async function getUser (user){
@@ -41,6 +50,7 @@ async function deleteUser (user){
         return {message: 'User not logged in'};
     }
     else{
+        //Delete other data in database, not only users
         const query = `DELETE FROM users WHERE userid = '${user.userid}'`;
         const result = await db.query(query);
         const queryTracking = `DELETE FROM tracking WHERE userid = '${user.userid}'`;
@@ -58,10 +68,13 @@ async function createTracking (workout, user){
         return {message: 'User not logged in'};
     }
     else{
-        const bmi = (height * height) / weight;
-        const query = `INSERT INTO tracking (weight, height, bmi, userid, progress) VALUES ('${weight}', '${height}', '${bmi}', '${user.userid}', '${progress}')`;
-        const result = await db.query(query);
-        return {message: 'Tracking added'};
+        if(weight !== null || height !== null || progress !== null){
+            //BMI = height^2 / weight
+            const bmi = (height * height) / weight;
+            const query = `INSERT INTO tracking (weight, height, bmi, userid, progress) VALUES ('${weight}', '${height}', '${bmi}', '${user.userid}', '${progress}')`;
+            const result = await db.query(query);
+            return {message: 'Tracking added'};
+        }
     }
 }
 
@@ -70,7 +83,7 @@ async function getTracking (user){
         return {message: 'User not logged in'};
     }
     else{
-        const query = `SELECT * FROM tracking WHERE userid = '${user.userid}'`;
+        const query = `SELECT * FROM tracking WHERE userid = '${user.userid}' ORDER BY trackingid DESC`;
         const result = await db.query(query);
         return {workout: result.rows};
     }
@@ -82,9 +95,11 @@ async function deleteTracking (workout, user){
         return {message: 'User not logged in'};
     }
     else{
-        const query = `DELETE FROM tracking WHERE trackingid = '${trackingid}' AND userid = '${user.userid}'`;
-        const result = await db.query(query);
-        return {message: 'Tracking removed'};
+        if (trackingid !== null){
+            const query = `DELETE FROM tracking WHERE trackingid = '${trackingid}' AND userid = '${user.userid}'`;
+            const result = await db.query(query);
+            return {message: 'Tracking removed'};
+        }
     }
 }
 
@@ -95,9 +110,11 @@ async function createWorkout (workout, user){
         return {message: 'User not logged in'};
     }
     else{
-        const queryCreate = `INSERT INTO workout (name, bodypart, reps, sets, userid) VALUES ('${name}', '${bodypart}', '${reps}', '${sets}', '${user.userid}')`;
-        const resultCreate = await db.query(queryCreate);
-        return {message: 'Workout added'};
+        if(name !== null || bodypart !== null || reps !== null || sets !== null){
+            const queryCreate = `INSERT INTO workout (name, bodypart, reps, sets, userid) VALUES ('${name}', '${bodypart}', '${reps}', '${sets}', '${user.userid}')`;
+            const resultCreate = await db.query(queryCreate);
+            return {message: 'Workout added'};
+        }
     }
 }
 
@@ -130,9 +147,11 @@ async function deleteWorkout (workout, user){
         return {message: 'User not logged in'};
     }
     else{
-        const query = `DELETE FROM workout WHERE workoutid = '${workoutid}'`;
-        const result = await db.query(query);
-        return {message: 'Workout deleted'};
+        if(workoutid !== null){
+            const query = `DELETE FROM workout WHERE workoutid = '${workoutid}'`;
+            const result = await db.query(query);
+            return {message: 'Workout deleted'};
+        }
     }
 }
 

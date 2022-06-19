@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
+// List of API calls to the server
 public interface UserService {
     //Login
     @FormUrlEncoded

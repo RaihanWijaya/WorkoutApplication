@@ -1,5 +1,6 @@
 package com.workout.workoutapp.request;
 
+//ApiUtils for the API calls
 public class ApiUtils {
 
     public static final String BASE_URL = "http://10.0.2.2:8610/workout/";

@@ -26,6 +26,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: LoginActivity
+ * Description: This class is used to login to the application.
+ */
+
 public class LoginActivity extends AppCompatActivity {
     Button loginButton, loginBack;
     EditText loginUsername, loginPassword;

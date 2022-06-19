@@ -32,6 +32,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: TrackingActivity
+ * Description: This class is used to display the tracking menu and list of tracking of the application.
+ */
+
 public class TrackingActivity extends AppCompatActivity {
 
     Button trackingBack, trackingAdd, trackingGraph;

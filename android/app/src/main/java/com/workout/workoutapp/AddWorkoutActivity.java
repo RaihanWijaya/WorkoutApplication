@@ -24,6 +24,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: AddWorkoutActivity
+ * Description: This class is used to add a new workout to the database.
+ */
 public class AddWorkoutActivity extends AppCompatActivity {
 
     EditText addWorkoutName, addWorkoutBodypart, addWorkoutReps, addWorkoutSets;
@@ -49,7 +53,7 @@ public class AddWorkoutActivity extends AppCompatActivity {
         addWorkoutBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, MainActivity.class);
+                Intent intent = new Intent(mContext, ProfileActivity.class);
                 startActivity(intent);
             }
         });

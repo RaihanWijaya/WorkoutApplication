@@ -24,6 +24,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: TrackingAddActivity
+ * Description: This class is used to add a new tracking to the database.
+ */
+
 public class TrackingAddActivity extends AppCompatActivity {
 
     EditText addTrackingWeight, addTrackingHeight, addTrackingProgress;

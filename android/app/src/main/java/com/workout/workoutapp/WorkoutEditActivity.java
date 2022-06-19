@@ -18,6 +18,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: WorkoutEditActivity
+ * Description: This class is used to edit a workout.
+ */
+
 public class WorkoutEditActivity extends AppCompatActivity {
 
     EditText editWorkoutName, editWorkoutBodypart, editWorkoutReps, editWorkoutSets;

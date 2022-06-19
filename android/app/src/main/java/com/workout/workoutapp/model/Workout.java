@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+// Class: Workout
 public class Workout {
     private int workoutid;
     private String name;
@@ -13,6 +14,7 @@ public class Workout {
     private int sets;
     private int userid;
 
+    // Constructor: Workout
     public Workout(int workoutid, String name, String bodypart, int reps, int sets, int userid) {
         this.workoutid = workoutid;
         this.name = name;
@@ -34,6 +36,7 @@ public class Workout {
         this.workoutid = workoutid;
     }
 
+    // Get function
     public String getWorkoutID() {
         return String.valueOf(workoutid);
     }
@@ -58,6 +61,7 @@ public class Workout {
         return name;
     }
 
+    // toString function for listview
     @NonNull
     @Override
     public String toString() {

@@ -12,6 +12,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// Class: SessioCookieJar for the policy and persistence of HTTP cookies
 class SessionCookieJar implements CookieJar {
 
     private List<Cookie> cookies;
@@ -31,6 +32,7 @@ class SessionCookieJar implements CookieJar {
     }
 }
 
+// Class: RetrofitClient for manages the process of receiving, sending, and creating HTTP requests and responses
 public class RetrofitClient {
     private static Retrofit retrofit = null;
 

@@ -21,6 +21,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: WorkoutDetailActivity
+ * Description: This class is used to show the details of a workout from the database.
+ */
+
 public class WorkoutDetailActivity extends AppCompatActivity {
 
     TextView workoutID, workoutName, workoutBodypart, workoutReps, workoutSets;

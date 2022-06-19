@@ -1,3 +1,6 @@
+/**
+ * Configuration for database connection
+ */
 const {Client} = require('pg');
 const db = new Client({
     user: 'mraihanw_sbd',
@@ -9,6 +12,7 @@ const db = new Client({
     ssl: true
 });
 
+//Jika database tidak ditemukan, maka akan menampilkan pesan error
 db.connect((err) => {
     if (err) {
         console.error('Error connecting to postgres', err);

@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Class: StartActivity
+ * Description: This class is as the first interface and used to start the application.
+ */
+
 public class StartActivity extends AppCompatActivity {
 
     @Override

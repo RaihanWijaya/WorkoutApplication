@@ -35,6 +35,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: ProfileActivity
+ * Description: This class is used to display the profile menu of the application.
+ */
+
 public class ProfileActivity extends AppCompatActivity {
 
     TextView profileUserID, profileUsername;

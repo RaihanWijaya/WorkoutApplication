@@ -28,6 +28,9 @@ Untuk menjalankan projek ini, bisa dengan menggunakan command berikut:
   npm run start
 ```
 
+## Postman
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/18438487/UzBmMn5P)
 
 ## Authors
 

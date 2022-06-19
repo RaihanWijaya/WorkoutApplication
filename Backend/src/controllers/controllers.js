@@ -1,9 +1,11 @@
-const workoutService = require('../services/services');
+/**
+ * Controllers for the API
+ */
 
+const workoutService = require('../services/services');
 
 async function login(req,res){
     try{
-        //const result = await todoService.login(req.body);
         res.json({message: 'authorized'});
     }catch(err){
         res.json(err);
@@ -100,6 +102,7 @@ async function deleteWorkout(req,res){
     }
 }
 
+//Controller di export
 module.exports = {
     login,
     register,

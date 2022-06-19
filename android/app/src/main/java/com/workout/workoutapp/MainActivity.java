@@ -31,6 +31,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class: MainActivity
+ * Description: This class is used to display the main menu of the application.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     Button mainBack, mainProfile, mainTracking, mainFinish;
